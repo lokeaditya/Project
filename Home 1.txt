@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Restaurant Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('Background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+        .header h1 {
+            animation: fadeInBounce 1.5s ease forwards;
+            font-size: 3em;
+        }
+        @keyframes fadeInBounce {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            60% {
+                opacity: 1;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 5px 0;
+            margin-top: 0;
+            width: 100%;
+        }
+        .navbar a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #007bff;
+            color: white;
+            transform: scale(1.05);
+        }
+        .restaurant-section {
+            text-align: left;
+            padding: 40px 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Partially opaque background */
+            margin: 20px 0; /* Adjusted margin for spacing */
+            border-radius: 8px;
+            width: 100%; /* Full width */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .restaurant-section h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .restaurant-list {
+            display: block;
+            margin: 0;
+        }
+        .restaurant-item {
+            background-color: rgba(248, 249, 250, 0.9); /* Semi-transparent for restaurant items */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .restaurant-item img {
+            width: 100%;
+            border-radius: 8px;
+            max-height: 200px;
+            object-fit: cover;
+        }
+        .restaurant-logo {
+            width: 80px;
+            height: auto;
+            display: block;
+            margin: -40px auto 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .dishes-list {
+            margin-top: 10px;
+            display: none; /* Hide by default */
+        }
+        .restaurant-item:hover .dishes-list {
+            display: block; /* Show on hover */
+        }
+        .dish-name {
+            margin: 5px 0;
+            font-style: italic;
+            color: #555;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Foodiism</h1>
+        <p>Your one-stop solution for dining and booking!</p>
+    </div>
+    <div class="navbar">
+        <a href="Home.html">Home</a>
+        <a href="restaurant.html">Restaurant</a>
+        <a href="log in.html">Login</a>
+        <a href="sample.html">Sign Up</a>
+    </div>
+
+    <div class="restaurant-section">
+        <h2>Featured Restaurants</h2>
+        <div class="restaurant-list">
+            <div class="restaurant-item">
+                <img src="restaurant1-photo.jpg" alt="Restaurant 1 Photo">
+                <img src="restaurant1-logo.png" alt="Restaurant 1 Logo" class="restaurant-logo">
+                <h3>Restaurant 1</h3>
+                <div class="dishes-list">
+                    <p class="dish-name">Pasta</p>
+                    <p class="dish-name">Salad</p>
+                    <p class="dish-name">Pizza</p>
+                </div>
+                <p>Delicious cuisine from around the world.</p>
+            </div>
+            <div class="restaurant-item">
+                <img src="restaurant2-photo.jpg" alt="Restaurant 2 Photo">
+                <img src="restaurant2-logo.png" alt="Restaurant 2 Logo" class="restaurant-logo">
+                <h3>Restaurant 2</h3>
+                <div class="dishes-list">
+                    <p class="dish-name">Sushi</p>
+                    <p class="dish-name">Ramen</p>
+                    <p class="dish-name">Tempura</p>
+                </div>
+                <p>Experience authentic local flavors.</p>
+            </div>
+            <div class="restaurant-item">
+                <img src="restaurant3-photo.jpg" alt="Restaurant 3 Photo">
+                <img src="restaurant3-logo.png" alt="Restaurant 3 Logo" class="restaurant-logo">
+                <h3>Restaurant 3</h3>
+                <div class="dishes-list">
+                    <p class="dish-name">Steak</p>
+                    <p class="dish-name">Burgers</p>
+                    <p class="dish-name">Fries</p>
+                </div>
+                <p>Gourmet dishes prepared by top chefs.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="restaurant-section">
+        <h2>Most Rated Restaurants</h2>
+        <div class="restaurant-list">
+            <div class="restaurant-item">
+                <img src="restaurant4-photo.jpg" alt="Restaurant 4 Photo">
+                <img src="restaurant4-logo.png" alt="Restaurant 4 Logo" class="restaurant-logo">
+                <h3>Restaurant 4</h3>
+                <div class="dishes-list">
+                    <p class="dish-name">Tacos</p>
+                    <p class="dish-name">Nachos</p>
+                    <p class="dish-name">Quesadilla</p>
+                </div>
+                <p>Popular for its vibrant flavors and ambiance.</p>
+            </div>
+            <div class="restaurant-item">
+                <img src="restaurant5-photo.jpg" alt="Restaurant 5 Photo">
+                <img src="restaurant5-logo.png" alt="Restaurant 5 Logo" class="restaurant-logo">
+                <h3>Restaurant 5</h3>
+                <div class="dishes-list">
+                    <p class="dish-name">Curries</p>
+                    <p class="dish-name">Naan</p>
+                    <p class="dish-name">Biryani</p>
+                </div>
+                <p>A haven for spice lovers.</p>
+            </div>
+            <div class="restaurant-item">
+                <img src="restaurant6-photo.jpg" alt="Restaurant 6 Photo">
+                <img src="restaurant6-logo.png" alt="Restaurant 6 Logo" class="restaurant-logo">
+                <h3>Restaurant 6</h3>
+                <div class="dishes-list">
+                    <p class="dish-name">Fish & Chips</p>
+                    <p class="dish-name">Shepherd's Pie</p>
+                    <p class="dish-name">Scones</p>
+                </div>
+                <p>Traditional dishes with a modern twist.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Foodiism. All rights reserved.</p>
+        <p><a href="privacy.html" style="color: #007bff;">Privacy Policy</a> | <a href="terms.html" style="color: #007bff;">Terms of Service</a></p>
+    </div>
+</body>
+</html>

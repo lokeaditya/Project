@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('Background.jpg') no-repeat center center fixed; /* Adjust path as needed */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items in this group */
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: space-between; /* Evenly space the buttons */
+            width: 100%; /* Make the radio group take full width */
+            margin-top: 10px; /* Space above the radio buttons */
+        }
+        .radio-group label {
+            flex: 1; /* Make labels take equal space */
+            padding: 10px; /* Button-like padding */
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            background-color: white; /* Default background */
+            color: #007bff; /* Default text color */
+            margin: 0 5px; /* Space between buttons */
+            text-align: center; /* Center text inside button */
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+        }
+        .radio-group input[type="radio"] {
+            display: none; /* Hide the default radio button */
+        }
+        .radio-group input[type="radio"]:checked + label {
+            background-color: #007bff; /* Background when selected */
+            color: white; /* Text color when selected */
+            border-color: #0056b3; /* Darker border when selected */
+        }
+        .form-group button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            width: auto; 
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 10px; /* Space between buttons */
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .cancel-button {
+            background-color: #f44336; /* Red background for cancel button */
+        }
+        .cancel-button:hover {
+            background-color: #c62828; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <form action="signup.php" method="post">
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="role">I am a:</label>
+                <div class="radio-group">
+                    <input type="radio" id="owner" name="role" value="owner">
+                    <label for="owner">Owner</label>
+                    <input type="radio" id="customer" name="role" value="customer">
+                    <label for="customer">Customer</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Sign Up</button>
+                <button type="button" class="cancel-button" onclick="window.location.href='home.html';">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const role = document.querySelector('input[name="role"]:checked');
+            if (role) {
+                if (role.value === 'owner') {
+                    window.location.href = 'restaurant-details.html';
+                } else {
+                    window.location.href = 'customer-welcome.html';
+                }
+            } else {
+                alert('Please select a role.');
+            }
+        });
+    </script>
+</body>
+</html>
